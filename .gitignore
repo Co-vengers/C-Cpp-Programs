@@ -1,2 +1,11 @@
+# C / C++
+*.o
+*.out
+a.out
+*.exe
+
+# Build folders
+build/
+bin/
 .vscode/
 .idea/
