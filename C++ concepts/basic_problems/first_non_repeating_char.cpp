@@ -11,13 +11,11 @@ public:
 			ch[ele]++;
 		}
 
-		int mini = 10000;
-		for(auto entry : ch){
-			if(entry.second < mini){
-				mini = entry.second;
+		for(char c : str){
+			if(ch[c] == 1){
+				cout<<c;
 			}
 		}
-		cout<<mini<<endl;
 	}
 
 };
