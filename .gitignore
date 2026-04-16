@@ -1,12 +1,35 @@
-# C / C++
+# C / C++ object and binary files
 *.o
+*.obj
 *.out
-a.out
 *.exe
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.gch
+a.out
+
+# Debug symbols and crash files
+*.dSYM/
+*.stackdump
 
 # Build folders
 build/
 bin/
+cmake-build-*/
+
+# CMake / generated build system files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Editor / IDE
 .vscode/
 .idea/
+
+# macOS
 .DS_Store
