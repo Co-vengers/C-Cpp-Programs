@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
 class Node{
@@ -59,6 +61,33 @@ public:
 			cout<<p -> data<<"\t";
 		}
 	}
+
+	void levelorder(Node* root){
+		vector<vector<int>> ans;
+		if(root != NULL){
+			queue<Node*> q;
+			q.push(root);
+			while(!q.empty()){
+				int s = q.size();
+				vector<int> level;
+
+				for(int i = 0 ; i < s ; i++){
+					Node* temp = q.front();
+					q.pop();
+					if(temp -> ladd != NULL) q.push(temp -> ladd);
+					if(temp -> radd != NULL) q.push(temp -> radd);
+					level.push_back(temp -> data);
+				}
+				ans.push_back(level);
+			}
+			for(auto &vec : ans){
+				for(auto &it : vec){
+					cout<<it<<" ";
+				}
+				cout<<"\n";
+			}
+		}
+	}
 };
 
 int main(){
@@ -71,7 +100,8 @@ int main(){
 		cout<<"2. Inorder\n";
 		cout<<"3. Preorder\n";
 		cout<<"4. Postorder\n";
-		cout<<"5. Exit\n";
+		cout<<"5. Levelorder\n";
+		cout<<"6. Exit\n";
 
 		cin>>ch;
 		switch(ch){
@@ -86,9 +116,10 @@ int main(){
 		case 2: t1.inorder(t1.root); break;
 		case 3: t1.preorder(t1.root); break;
 		case 4: t1.postorder(t1.root); break;
-		case 5: break;
+		case 5: t1.levelorder(t1.root);break;
+		case 6: break;
 		default: cout<<"Invalid choice\n";
 		}
 	}
-	while(ch != 5);
+	while(ch != 6);
 }
