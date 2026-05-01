@@ -32,29 +32,27 @@ public:
 		return temp;
 	}
 
-	void display(){
-		if(!s2.empty()){
-			temp = s2;
-			while(!temp.empty()){
-				int t = temp.top();
-				temp.pop();
-				cout<<t<<" ";
-			}
-		}
+	void display() {
+	    stack<int> t2 = s2;
+	    while (!t2.empty()) {
+	        cout << t2.top() << " ";
+	        t2.pop();
+	    }
 
-		else{
-			temp2 = s1;
-			while(!temp2.empty()){
-				int t = temp2.top();
-				temp2.pop();
-				temp.push(t);
-			}
-			while(!temp.empty()){
-				int t = temp.top();
-				temp.pop();
-				cout<<t<<" ";
-			}
-		}
+	    stack<int> t1 = s1;
+	    stack<int> rev;
+
+	    while (!t1.empty()) {
+	        rev.push(t1.top());
+	        t1.pop();
+	    }
+
+	    while (!rev.empty()) {
+	        cout << rev.top() << " ";
+	        rev.pop();
+	    }
+
+	    cout << endl;
 	}
 };
 
@@ -71,8 +69,19 @@ int main(){
         cin>>choice;
 
         switch(choice) {
-            case 1: int n; cout <<"Enter a number: "; cin>>n; q.enque(n); break;
-            case 2: q.deque(); break;
+            case 1:{
+            	int n; 
+            	cout <<"Enter a number: "; 
+            	cin>>n; 
+            	q.enque(n); 
+            	break;
+            }
+            case 2:{
+            	int res = q.deque();
+        		if(res != -1)
+            		cout << "Deleted element = " << res << endl;
+        		break;
+            }
             case 3: q.display(); break;
             case 4: exit(0);
             default: cout<<"Wrong choice"<<endl;
