@@ -47,7 +47,9 @@ void pop(){
 	if(isEmpty()){
 		printf("Underflow\n");
 	}
-	printf("%d\n", a[top--]);
+	else{
+		printf("%d\n", a[top--]);
+	}
 }
 
 void display(){
