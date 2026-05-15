@@ -7,8 +7,8 @@ class BFS{
 public:
 	vector<vector<int>> createAdjList(int vertices, vector<pair<int, int>> edges) {
     
-    	// Initialize matrix with 0
-	    vector<vector<int>> adjList(vertices, vector<int>(vertices, 0));
+    	// Initialize list
+	    vector<vector<int>> adjList(vertices);
 
 	    // Fill edges
 	    for(auto edge : edges) {
