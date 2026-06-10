@@ -42,7 +42,7 @@ void heapify(int a[], int i, int n){
 
 void buld_max_heap(int a[], int n){
 	int i;
-	// (n-1)/2 => last non-leaf node
+	// (n/2)-1 => last non-leaf node
 	// we perform heapification for all the sub trees from last non-leaf node to root node
 	for(i = (n/2)-1 ; i >= 0 ; i--){
 		heapify(a, i, n);
