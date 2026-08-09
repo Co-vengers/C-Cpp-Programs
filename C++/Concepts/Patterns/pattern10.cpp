@@ -28,3 +28,19 @@ int main(){
     s1.pattern1(n);
     return 0;
 }
+
+// loop k goes like (for n = 5):
+//     k   i
+//     8 - 0(2) => 8 spaces
+//     8 - 1(2) => 6 spaces
+//     8 - 2(2) => 4 spaces
+//     8 - 3(2) => 2 spaces
+//     8 - 4(2) => 0 spaces
+//     8 - 5(2) => terminate
+
+// output:
+// 1        1
+// 12      21
+// 123    321
+// 1234  4321
+// 1234554321
